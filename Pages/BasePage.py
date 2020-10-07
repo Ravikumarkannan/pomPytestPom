@@ -31,3 +31,11 @@ class BasePage(object):
     def is_enabled(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator))
         return element.is_enabled()
+
+    def is_element_exists(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator))
+        return element.is_displayed()
+
+    def get_element_attribute(self, by_locator, attribute):
+        element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator))
+        return element.get_attribute(attribute)

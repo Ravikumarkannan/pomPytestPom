@@ -1,6 +1,6 @@
 from selenium import webdriver
 import pytest
-from Config.config import Configuration
+from Resources.config import Configuration
 
 
 @pytest.fixture(params=["chrome"], scope='session')
